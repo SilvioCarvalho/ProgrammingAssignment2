@@ -29,9 +29,8 @@ makeCacheMatrix <- function(x = matrix()) {
 ## cacheSolve calculates the inverse matrix of the special ''maxtrix'' created with the above function. 
 ## However, it first checks to see if the inverse matrix has already been calculated. 
 ## If so, it gets the inverse matrix from the cache and skips the computation.
-## Otherwise, it calculates the inverse matrix of the data and sets the value of the inverse matrix in the cache via the 
-
-setmean function.
+## Otherwise, it calculates the inverse matrix of the data and sets the value of the inverse matrix in the cache 
+## via the setSolve function.
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
@@ -45,7 +44,7 @@ cacheSolve <- function(x, ...) {
         	x$setSolve(inverseMatrix)
         	inverseMatrix
 	}, error = function(ex) {
-  			message("no data cached yet")
+  		message("no data cached yet")
 	}, finally = { }
 	) ## End of tryCatch
 }
